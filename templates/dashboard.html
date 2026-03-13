@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Your Job Dashboard</h2>
+
+<div class="row mb-4">
+
+<div class="col-md-3">
+<div class="card shadow text-bg-primary">
+<div class="card-body">
+<h5>Total Applications</h5>
+<h3>{{ total_jobs }}</h3>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow text-bg-warning">
+<div class="card-body">
+<h5>Interviews</h5>
+<h3>{{ interviews }}</h3>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow text-bg-danger">
+<div class="card-body">
+<h5>Rejected</h5>
+<h3>{{ rejected }}</h3>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow text-bg-success">
+<div class="card-body">
+<h5>Offers</h5>
+<h3>{{ offers }}</h3>
+</div>
+</div>
+</div>
+
+</div>
+
+<form method="GET" class="mb-3">
+
+<input
+type="text"
+name="search"
+class="form-control"
+placeholder="Search company..."
+>
+
+</form>
+
+<table class="table table-striped">
+
+<tr>
+<th>Company</th>
+<th>Role</th>
+<th>Status</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+
+{% for job in jobs %}
+
+<tr>
+<td>{{ job.company }}</td>
+<td>{{ job.role }}</td>
+<td>
+
+{% if job.status == "Interview" %}
+<span class="badge bg-warning text-dark">Interview</span>
+
+{% elif job.status == "Rejected" %}
+<span class="badge bg-danger">Rejected</span>
+
+{% elif job.status == "Offer" %}
+<span class="badge bg-success">Offer</span>
+
+{% else %}
+<span class="badge bg-primary">Applied</span>
+
+{% endif %}
+
+</td>
+<td>{{ job.date_applied }}</td>
+
+<td>
+<a href="/edit/{{ job.id }}" class="btn btn-warning btn-sm">Edit</a>
+<a href="/delete/{{ job.id }}" class="btn btn-danger btn-sm">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

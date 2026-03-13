@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Job Application</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+<input type="text" name="company" class="form-control" placeholder="Company" required>
+</div>
+
+<div class="mb-3">
+<input type="text" name="role" class="form-control" placeholder="Role" required>
+</div>
+
+<div class="mb-3">
+<input type="text" name="salary" class="form-control" placeholder="Salary">
+</div>
+
+<div class="mb-3">
+<input type="text" name="status" class="form-control" placeholder="Status">
+</div>
+
+<div class="mb-3">
+<input type="text" name="job_link" class="form-control" placeholder="Job Link">
+</div>
+
+<div class="mb-3">
+<textarea name="notes" class="form-control" placeholder="Notes"></textarea>
+</div>
+
+<div class="mb-3">
+<input type="text" name="date_applied" class="form-control" placeholder="Date Applied">
+</div>
+
+<button class="btn btn-primary">Save Job</button>
+
+</form>
+
+{% endblock %}

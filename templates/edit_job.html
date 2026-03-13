@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Edit Job Application</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+<label class="form-label">Company</label>
+<input type="text" name="company" class="form-control" value="{{ job.company }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Role</label>
+<input type="text" name="role" class="form-control" value="{{ job.role }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Salary</label>
+<input type="text" name="salary" class="form-control" value="{{ job.salary }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Status</label>
+<select name="status" class="form-select">
+
+<option {% if job.status == "Applied" %}selected{% endif %}>Applied</option>
+
+<option {% if job.status == "Interview" %}selected{% endif %}>Interview</option>
+
+<option {% if job.status == "Rejected" %}selected{% endif %}>Rejected</option>
+
+<option {% if job.status == "Offer" %}selected{% endif %}>Offer</option>
+
+</select>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Job Link</label>
+<input type="text" name="job_link" class="form-control" value="{{ job.job_link }}">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Notes</label>
+<textarea name="notes" class="form-control">{{ job.notes }}</textarea>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Date Applied</label>
+<input type="text" name="date_applied" class="form-control" value="{{ job.date_applied }}">
+</div>
+
+<button class="btn btn-primary">Update Job</button>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+{% endblock %}
