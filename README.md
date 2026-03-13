@@ -63,3 +63,105 @@ Users can easily track the progress of their job search.
 ---
 
 ## 📂 Project Structure
+job-tracker-pro
+│
+├── app.py
+├── requirements.txt
+├── Procfile
+├── build.sh
+│
+├── templates
+│ ├── base.html
+│ ├── dashboard.html
+│ ├── login.html
+│ ├── register.html
+│ ├── add_job.html
+│ └── edit_job.html
+│
+└── instance
+└── database.db
+
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+
+git clone https://github.com/your-username/job-tracker-pro.git
+
+
+Navigate to the project folder
+
+
+cd job-tracker-pro
+
+
+Create virtual environment
+
+
+python -m venv venv
+
+
+Activate virtual environment
+
+
+venv\Scripts\activate
+
+
+Install dependencies
+
+
+pip install -r requirements.txt
+
+
+Run the application
+
+
+python app.py
+
+
+Open in browser
+
+
+http://127.0.0.1:5000
+
+
+---
+
+## 🔐 Authentication
+
+Passwords are securely stored using **Werkzeug password hashing**.
+
+Each user can only access their own job applications using session-based authentication.
+
+---
+
+## 🚀 Future Improvements
+
+- Email notifications for interview updates
+- Job analytics charts
+- Resume upload feature
+- REST API support
+- PostgreSQL database
+
+---
+
+## 👨‍💻 Author
+
+**Nikhil Kumar**
+
+Python Developer | Backend Enthusiast
+
+GitHub:  
+https://github.com/nikhilkumar-python
+
+LinkedIn:  
+(www.linkedin.com/in/nikhil-kumar-32523a3a9)
+
+---
+
+## ⭐ If you like this project
+
+Please consider giving it a **star on GitHub**.
