@@ -40,6 +40,10 @@ The dashboard shows:
 Users can easily track the progress of their job search.
 
 ---
+## 📸 Screenshots
+<img width="1920" height="1080" alt="{B1D252D1-75C4-4F54-B97D-1362645CEE14}" src="https://github.com/user-attachments/assets/a6cd1ba9-b970-48ca-a506-16e2af409456" />
+
+---
 
 ## 🛠 Tech Stack
 
